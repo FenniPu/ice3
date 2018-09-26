@@ -228,20 +228,20 @@ public:
 
         //! Modify the testnet genesis block so the timestamp is valid for a later start.
         genesis.nTime = 1534570200;
-        genesis.nNonce = 21148656;
+        genesis.nNonce = 21423987;
 
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0x000000938f4f20c6ccb3fea36539ade5af73d0bb45c55af64c7f7f1bfa5f3381"));
+        assert(hashGenesisBlock == uint256("0x00000fae7461de1bdd7d5e43dbb45c06ee9e73960666bfeb08b86ee9f3a2610b"));
 
         vFixedSeeds.clear();
         vSeeds.clear();
 
-        // Testnet Bitcoin Green addresses start with 'g'
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 98);
-        // Testnet Bitcoin Green script addresses start with '5' or '6'
-        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 12);
-        // Testnet private keys start with 'k'
-        base58Prefixes[SECRET_KEY] = std::vector<unsigned char>(1, 108);
+        // Testnet Bitcoin Green addresses start with 'r'
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 122);
+        // Testnet Bitcoin Green script addresses start with '7' or '8'
+        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 17);
+        // Testnet private keys start with 'p'
+        base58Prefixes[SECRET_KEY] = std::vector<unsigned char>(1, 118);
         // Testnet Bitcoin Green BIP32 pubkeys start with 'tpub' (Bitcoin defaults)
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x04)(0x35)(0x87)(0xCF).convert_to_container<std::vector<unsigned char> >();
         // Testnet Bitcoin Green BIP32 prvkeys start with 'tprv' (Bitcoin defaults)
@@ -297,11 +297,11 @@ public:
         bnProofOfWorkLimit = ~uint256(0) >> 1;
         genesis.nTime = 1537880400;
         genesis.nBits = 0x207fffff;
-        genesis.nNonce = 20542300;
+        genesis.nNonce = 20542304;
 
         hashGenesisBlock = genesis.GetHash();
         nDefaultPort = 29333;
-        assert(hashGenesisBlock == uint256("0x229874aa8a92df3347600978e226ba57bc994b9fa291ea50519afafca2d50ed3"));
+        assert(hashGenesisBlock == uint256("0x22a739de95cb55135b936fa2161ce55582b68a04de056447b95f512ab0fec4c1"));
 
         vFixedSeeds.clear(); //! Regtest mode doesn't have any fixed seeds.
         vSeeds.clear();      //! Regtest mode doesn't have any DNS seeds.
