@@ -230,13 +230,13 @@ public:
         genesis.nTime = 1534570200;
         genesis.nNonce = 21423987;
 
-            printf("genesis.nTime = %u \n", genesis.nTime);
-            printf("genesis.nNonce = %u \n", genesis.nNonce);
-            printf("genesis.GetHash = %s\n", genesis.GetHash().ToString().c_str()); //first this, then comment this line out and uncomment the one under.
-            printf("genesis.hashMerkleRoot = %s \n", genesis.hashMerkleRoot.ToString().c_str()); //improvised. worked for me, to find merkle root
+      //      printf("genesis.nTime = %u \n", genesis.nTime);
+      //      printf("genesis.nNonce = %u \n", genesis.nNonce);
+      //      printf("genesis.GetHash = %s\n", genesis.GetHash().ToString().c_str()); //first this, then comment this line out and uncomment the one under.
+      //      printf("genesis.hashMerkleRoot = %s \n", genesis.hashMerkleRoot.ToString().c_str()); //improvised. worked for me, to find merkle root
 
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0x"));
+        assert(hashGenesisBlock == uint256("0x420cfee0ccf61679d842c59909631e2b7b39f3d801ac71b56370c9df899a5cad"));
 
         vFixedSeeds.clear();
         vSeeds.clear();
@@ -304,10 +304,10 @@ public:
         genesis.nBits = 0x207fffff;
         genesis.nNonce = 20542304;
 
-    //    printf("genesis.nTime = %u \n", genesis.nTime);
-    //    printf("genesis.nNonce = %u \n", genesis.nNonce);
-    //    printf("genesis.GetHash = %s\n", genesis.GetHash().ToString().c_str()); //first this, then comment this line out and uncomment the one under.
-    //    printf("genesis.hashMerkleRoot = %s \n", genesis.hashMerkleRoot.ToString().c_str()); //improvised. worked for me, to find merkle root
+        printf("genesis.nTime = %u \n", genesis.nTime);
+        printf("genesis.nNonce = %u \n", genesis.nNonce);
+        printf("genesis.GetHash = %s\n", genesis.GetHash().ToString().c_str()); //first this, then comment this line out and uncomment the one under.
+        printf("genesis.hashMerkleRoot = %s \n", genesis.hashMerkleRoot.ToString().c_str()); //improvised. worked for me, to find merkle root
 
         hashGenesisBlock = genesis.GetHash();
         nDefaultPort = 29333;
