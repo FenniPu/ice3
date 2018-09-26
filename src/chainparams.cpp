@@ -150,9 +150,20 @@ public:
         genesis.nBits = 0x1e0ffff0;
         genesis.nNonce = 21279841;
 
+             printf("genesis.nTime = %u \n", genesis.nTime);
+             printf("genesis.nNonce = %u \n", genesis.nNonce);
+             printf("genesis.GetHash = %s\n", genesis.GetHash().ToString().c_str()); //first this, then comment this line out and uncomment the one under.
+             printf("genesis.hashMerkleRoot = %s \n", genesis.hashMerkleRoot.ToString().c_str()); //improvised. worked for me, to find merkle root
+
+
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0x0000070e2551543dcb397cbb054439e4c7294f4322a67135941bcc48fa13c34f"));
-        assert(genesis.hashMerkleRoot == uint256("0xafc5557636b7b5c1ff84068a26d661891196c4ff8e6822ed2f4883b53fa1762b"));
+        assert(hashGenesisBlock == uint256("0x"));
+        assert(genesis.hashMerkleRoot == uint256("0x"));
+
+      //  hashGenesisBlock = genesis.GetHash();
+      //  assert(hashGenesisBlock == uint256("0x0000070e2551543dcb397cbb054439e4c7294f4322a67135941bcc48fa13c34f"));
+      //  assert(genesis.hashMerkleRoot == uint256("0xafc5557636b7b5c1ff84068a26d661891196c4ff8e6822ed2f4883b53fa1762b"));
+
 
         // DNS Seeding
         vSeeds.push_back(CDNSSeedData("46.232.248.21", "46.232.248.21"));
@@ -185,7 +196,7 @@ public:
 
         nPoolMaxTransactions = 3;
         strSporkKey = "040adaedd077c8660ea6d2bcf5ef02372774ca553e29256c6ae963c7c368df79287148ffdc67ba6ba66b1b0f547c1dd3f008366ee8c1cb0d912ff63cdebce62fab";
-        strMasternodePoolDummyAddress = "GSJVWUkt6HtSCY2SaJ2akeyJUg8bg1hW3S";
+        strMasternodePoolDummyAddress = "RPkFr5js6GftfRY1NQK9bpTQZZLXmBiy3T";
         nStartMasternodePayments = genesis.nTime + 86400; // 24 hours after genesis creation
 
         nBudget_Fee_Confirmations = 6; // Number of confirmations for the finalization fee
@@ -229,11 +240,6 @@ public:
         //! Modify the testnet genesis block so the timestamp is valid for a later start.
         genesis.nTime = 1534570200;
         genesis.nNonce = 21423987;
-
-      //      printf("genesis.nTime = %u \n", genesis.nTime);
-      //      printf("genesis.nNonce = %u \n", genesis.nNonce);
-      //      printf("genesis.GetHash = %s\n", genesis.GetHash().ToString().c_str()); //first this, then comment this line out and uncomment the one under.
-      //      printf("genesis.hashMerkleRoot = %s \n", genesis.hashMerkleRoot.ToString().c_str()); //improvised. worked for me, to find merkle root
 
         hashGenesisBlock = genesis.GetHash();
         assert(hashGenesisBlock == uint256("0x420cfee0ccf61679d842c59909631e2b7b39f3d801ac71b56370c9df899a5cad"));
@@ -303,11 +309,6 @@ public:
         genesis.nTime = 1537880400;
         genesis.nBits = 0x207fffff;
         genesis.nNonce = 20542304;
-
-        printf("genesis.nTime = %u \n", genesis.nTime);
-        printf("genesis.nNonce = %u \n", genesis.nNonce);
-        printf("genesis.GetHash = %s\n", genesis.GetHash().ToString().c_str()); //first this, then comment this line out and uncomment the one under.
-        printf("genesis.hashMerkleRoot = %s \n", genesis.hashMerkleRoot.ToString().c_str()); //improvised. worked for me, to find merkle root
 
         hashGenesisBlock = genesis.GetHash();
         nDefaultPort = 29333;
