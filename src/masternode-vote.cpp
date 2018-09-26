@@ -98,7 +98,7 @@ void CCommunityVoteManager::CheckOrphanVotes()
             LogPrint("masternode", "CCommunityVoteManager::CheckOrphanVotes - Proposal/CommunityVote is known, activating and removing orphan vote\n");
             mapOrphanMasternodeCommunityVotes.erase(it1++);
         } else {
-//            ++it1;
+            ++it1;
         }
     }
 

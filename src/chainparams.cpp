@@ -54,7 +54,7 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
 // + Contains no strange transactions
 static Checkpoints::MapCheckpoints mapCheckpoints =
     boost::assign::map_list_of
-    (0,      uint256("0x000008467c3a9c587533dea06ad9380cded3ed32f9742a6c0c1aebc21bf2bc9b"));
+    (0,      uint256("0x0000070e2551543dcb397cbb054439e4c7294f4322a67135941bcc48fa13c34f"));
 
 
 
@@ -150,19 +150,17 @@ public:
         genesis.nBits = 0x1e0ffff0;
         genesis.nNonce = 21279841;
 
-             printf("genesis.nTime = %u \n", genesis.nTime);
-             printf("genesis.nNonce = %u \n", genesis.nNonce);
-             printf("genesis.GetHash = %s\n", genesis.GetHash().ToString().c_str()); //first this, then comment this line out and uncomment the one under.
-             printf("genesis.hashMerkleRoot = %s \n", genesis.hashMerkleRoot.ToString().c_str()); //improvised. worked for me, to find merkle root
-
+      //  printf("genesis.nTime = %u \n", genesis.nTime);
+      //  printf("genesis.nNonce = %u \n", genesis.nNonce);
+      //  printf("genesis.GetHash = %s\n", genesis.GetHash().ToString().c_str()); //first this, then comment this line out and uncomment the one under.
+      //  printf("genesis.hashMerkleRoot = %s \n", genesis.hashMerkleRoot.ToString().c_str()); //improvised. worked for me, to find merkle root
+      //  hashGenesisBlock = genesis.GetHash();
+      //  assert(hashGenesisBlock == uint256("0x"));
+      //  assert(genesis.hashMerkleRoot == uint256("0x"));
 
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0x"));
-        assert(genesis.hashMerkleRoot == uint256("0x"));
-
-      //  hashGenesisBlock = genesis.GetHash();
-      //  assert(hashGenesisBlock == uint256("0x0000070e2551543dcb397cbb054439e4c7294f4322a67135941bcc48fa13c34f"));
-      //  assert(genesis.hashMerkleRoot == uint256("0xafc5557636b7b5c1ff84068a26d661891196c4ff8e6822ed2f4883b53fa1762b"));
+        assert(hashGenesisBlock == uint256("0x0000070e2551543dcb397cbb054439e4c7294f4322a67135941bcc48fa13c34f"));
+        assert(genesis.hashMerkleRoot == uint256("0xafc5557636b7b5c1ff84068a26d661891196c4ff8e6822ed2f4883b53fa1762b"));
 
 
         // DNS Seeding
