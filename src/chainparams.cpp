@@ -3,6 +3,7 @@
 // Copyright (c) 2014-2015 The Dash developers
 // Copyright (c) 2015-2017 The PIVX developers
 // Copyright (c) 2017-2018 The Bitcoin Green developers
+// Copyright (c) 2018 The Rekel developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -53,16 +54,14 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
 // + Contains no strange transactions
 static Checkpoints::MapCheckpoints mapCheckpoints =
     boost::assign::map_list_of
-    (0,      uint256("0x000008467c3a9c587533dea06ad9380cded3ed32f9742a6c0c1aebc21bf2bc9b"))
-    (263046, uint256("0x3eba7f1e1b4a076d5333681bb9b8ee2aeac9eead6c82c8e65405726dda355826"))
-    (278818, uint256("0x86333b5dbcf898cfbc33038a10e935f2ecfd88aa8a967e2bc39c6dd9cc6c2e93"))
-    (286460, uint256("0xb74bd460b2bdb5f0c873c13266cc277433629f1e7714f35f765b169a1e990736"));
+    (0,      uint256("0x000008467c3a9c587533dea06ad9380cded3ed32f9742a6c0c1aebc21bf2bc9b"));
+
 
 
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
     1533767118, // * UNIX timestamp of last checkpoint block
-    600513,     // * total number of transactions between genesis and last checkpoint
+    0,     // * total number of transactions between genesis and last checkpoint
                 //   (the tx=... number in the SetBestChain debug.log lines)
     2000        // * estimated number of transactions per day after checkpoint
 };
@@ -96,11 +95,11 @@ public:
          * The characters are rarely used upper ASCII, not valid as UTF-8, and produce
          * a large 4-byte int at any alignment.
          */
-        pchMessageStart[0] = 0x54;
-        pchMessageStart[1] = 0xdc;
-        pchMessageStart[2] = 0x12;
-        pchMessageStart[3] = 0xae;
-        vAlertPubKey = ParseHex("04d2df519f53e2eaa4a7d7ff3347a360520c2f4b8f07d0241b5b6ba5ce8e3d6ecba5443696473a387adff27aa6bb72b952ff23026e088cff9f47cbb387ed52c326");
+        pchMessageStart[0] = 0x8C;
+        pchMessageStart[1] = 0x42;
+        pchMessageStart[2] = 0xC1;
+        pchMessageStart[3] = 0xFA;
+        vAlertPubKey = ParseHex("040adaedd077c8660ea6d2bcf5ef02372774ca553e29256c6ae963c7c368df79287148ffdc67ba6ba66b1b0f547c1dd3f008366ee8c1cb0d912ff63cdebce62fab");
         nDefaultPort = 9333;
         bnProofOfWorkLimit = ~uint256(0) >> 1;
         nSubsidyHalvingInterval = 1050000;
@@ -123,54 +122,53 @@ public:
          * Build the genesis block. Note that the output of the genesis coinbase cannot
          * be spent as it did not originally exist in the database.
          *
-         * genesis.py -a quark-hash -z "Even With Energy Surplus, Canada Unable to Meet Electricity Demands of Bitcoin Miners" -t 1516926684 -v 0 -p 04e5a8143f86ad8ac63791fbbdb8e0b91a8da88c8c693a95f6c2c13c063ea790f7960b8025a9047a7bc671d5cfe707a2dd2e13b86182e1064a0eea7bf863636363
+         * genesis.py -a quark-hash -z "Regierung legt drei Diesel-Optionen vor. Rekel is Born 25-09-2018 :-)" -t 1537880400 -v 0 -p 04157d28e0f0301a8bab403bbf3955c076b2ba87f9641d45bab81d2ea145563a0196846833f9e9a97c80a04d34471ac4e1425d218d0fb88cf5c9d7d8fb3da0b94e
          * 04ffff001d01042642544320426c6f636b20353031353932202d20323031372d31322d32392031353a34333a3337
          * algorithm: quark-hash
-         * merkle hash: 07cbcacfc822fba6bbeb05312258fa43b96a68fc310af8dfcec604591763f7cf
-         * pszTimestamp: Even With Energy Surplus, Canada Unable to Meet Electricity Demands of Bitcoin Miners
-         * pubkey: 04e5a8143f86ad8ac63791fbbdb8e0b91a8da88c8c693a95f6c2c13c063ea790f7960b8025a9047a7bc671d5cfe707a2dd2e13b86182e1064a0eea7bf863636363
-         * time: 1516926684
+         * merkle hash: afc5557636b7b5c1ff84068a26d661891196c4ff8e6822ed2f4883b53fa1762b
+         * pszTimestamp: Regierung legt drei Diesel-Optionen vor. Rekel is Born 25-09-2018 :-)
+         * pubkey: 04157d28e0f0301a8bab403bbf3955c076b2ba87f9641d45bab81d2ea145563a0196846833f9e9a97c80a04d34471ac4e1425d218d0fb88cf5c9d7d8fb3da0b94e
+         * time: 1537880400
          * bits: 0x1e0ffff0
          * Searching for genesis hash..
          * 16525.0 hash/s, estimate: 72.2 hgenesis hash found!
-         * nonce: 21256609
-         * genesis_hash: 000008467c3a9c587533dea06ad9380cded3ed32f9742a6c0c1aebc21bf2bc9b
+         * nonce: 21279841
+         * genesis_hash: 0000070e2551543dcb397cbb054439e4c7294f4322a67135941bcc48fa13c34f
          */
-        const char* pszTimestamp = "Even With Energy Surplus, Canada Unable to Meet Electricity Demands of Bitcoin Miners";
+        const char* pszTimestamp = "Regierung legt drei Diesel-Optionen vor. Rekel is Born 25-09-2018 :-)";
         CMutableTransaction txNew;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
         txNew.vin[0].scriptSig = CScript() << 486604799 << CScriptNum(4) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
         txNew.vout[0].nValue = 0 * COIN;
-        txNew.vout[0].scriptPubKey = CScript() << ParseHex("04e5a8143f86ad8ac63791fbbdb8e0b91a8da88c8c693a95f6c2c13c063ea790f7960b8025a9047a7bc671d5cfe707a2dd2e13b86182e1064a0eea7bf863636363") << OP_CHECKSIG;
+        txNew.vout[0].scriptPubKey = CScript() << ParseHex("04157d28e0f0301a8bab403bbf3955c076b2ba87f9641d45bab81d2ea145563a0196846833f9e9a97c80a04d34471ac4e1425d218d0fb88cf5c9d7d8fb3da0b94e") << OP_CHECKSIG;
         genesis.vtx.push_back(txNew);
         genesis.hashPrevBlock = 0;
         genesis.hashMerkleRoot = genesis.BuildMerkleTree();
         genesis.nVersion = 1;
-        genesis.nTime = 1516926684;
+        genesis.nTime = 1537880400;
         genesis.nBits = 0x1e0ffff0;
-        genesis.nNonce = 21256609;
+        genesis.nNonce = 21279841;
 
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0x000008467c3a9c587533dea06ad9380cded3ed32f9742a6c0c1aebc21bf2bc9b"));
-        assert(genesis.hashMerkleRoot == uint256("0x07cbcacfc822fba6bbeb05312258fa43b96a68fc310af8dfcec604591763f7cf"));
+        assert(hashGenesisBlock == uint256("0x0000070e2551543dcb397cbb054439e4c7294f4322a67135941bcc48fa13c34f"));
+        assert(genesis.hashMerkleRoot == uint256("0xafc5557636b7b5c1ff84068a26d661891196c4ff8e6822ed2f4883b53fa1762b"));
 
         // DNS Seeding
-        vSeeds.push_back(CDNSSeedData("seed1.savebitcoin.io", "seed1.savebitcoin.io"));
-        vSeeds.push_back(CDNSSeedData("seed2.savebitcoin.io", "seed2.savebitcoin.io"));
-        vSeeds.push_back(CDNSSeedData("seed3.savebitcoin.io", "seed3.savebitcoin.io"));
+        vSeeds.push_back(CDNSSeedData("46.232.248.21", "46.232.248.21"));
+        vSeeds.push_back(CDNSSeedData("37.221.192.88", "37.221.192.88"));
 
-        // Bitcoin Green addresses start with 'G'
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 38);
-        // Bitcoin Green script addresses start with '3'
-        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 6);
-        // Bitcoin Green private keys start with 'K'
-        base58Prefixes[SECRET_KEY] = std::vector<unsigned char>(1, 46);
-        // Bitcoin Green BIP32 pubkeys start with 'xpub' (Bitcoin defaults)
+        // Rekel addresses start with 'R'
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 60);
+        // Rekel script addresses start with '5'
+        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 11);
+        // Rekel private keys start with 'P'
+        base58Prefixes[SECRET_KEY] = std::vector<unsigned char>(1, 56);
+        // Rekel BIP32 pubkeys start with 'xpub' (Bitcoin defaults)
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x04)(0x88)(0xB2)(0x1E).convert_to_container<std::vector<unsigned char> >();
-        // Bitcoin Green BIP32 prvkeys start with 'xprv' (Bitcoin defaults)
+        // Rekel BIP32 prvkeys start with 'xprv' (Bitcoin defaults)
         base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x04)(0x88)(0xAD)(0xE4).convert_to_container<std::vector<unsigned char> >();
-        // Bitcoin Green BIP44 coin type is '222' (0x800000de)
+        // Rekel BIP44 coin type is '222' (0x800000de)
         // BIP44 coin type is from https://github.com/satoshilabs/slips/blob/master/slip-0044.md
         base58Prefixes[EXT_COIN_TYPE] = boost::assign::list_of(0x80)(0x00)(0x00)(0xde).convert_to_container<std::vector<unsigned char> >();
 
@@ -186,7 +184,7 @@ public:
         fHeadersFirstSyncingActive = false;
 
         nPoolMaxTransactions = 3;
-        strSporkKey = "04026c33ff67ad40db68e7ba4f6d858a56550a7aba460857d1cf0f34af4e7d090b255928df8135ee5343df02b88801635ef054da6ef3071ce69c2c3134acad54e9";
+        strSporkKey = "040adaedd077c8660ea6d2bcf5ef02372774ca553e29256c6ae963c7c368df79287148ffdc67ba6ba66b1b0f547c1dd3f008366ee8c1cb0d912ff63cdebce62fab";
         strMasternodePoolDummyAddress = "GSJVWUkt6HtSCY2SaJ2akeyJUg8bg1hW3S";
         nStartMasternodePayments = genesis.nTime + 86400; // 24 hours after genesis creation
 
@@ -220,8 +218,8 @@ public:
         nRejectBlockOutdatedMajority = 75;
         nToCheckBlockUpgradeMajority = 100;
         nMinerThreads = 0;
-        nTargetTimespan = 1 * 60; // Bitcoin Green: 1 day
-        nTargetSpacing = 2 * 60;  // Bitcoin Green: 1 minute
+        nTargetTimespan = 1 * 60; // Rekel: 1 day
+        nTargetSpacing = 2 * 60;  // Rekel: 1 minute
         nLastPOWBlock = 200;
         nMaturity = 15;
         nMasternodeCountDrift = 4;
@@ -297,7 +295,7 @@ public:
         nTargetTimespan = 24 * 60 * 60; // Bitcoin Green: 1 day
         nTargetSpacing = 2 * 60;        // Bitcoin Green: 1 minutes
         bnProofOfWorkLimit = ~uint256(0) >> 1;
-        genesis.nTime = 1516926684;
+        genesis.nTime = 1537880400;
         genesis.nBits = 0x207fffff;
         genesis.nNonce = 20542300;
 
