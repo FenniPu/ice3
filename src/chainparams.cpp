@@ -60,7 +60,7 @@ static Checkpoints::MapCheckpoints mapCheckpoints =
 
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
-    1533767118, // * UNIX timestamp of last checkpoint block
+    1537880400, // * UNIX timestamp of last checkpoint block
     0,     // * total number of transactions between genesis and last checkpoint
                 //   (the tx=... number in the SetBestChain debug.log lines)
     2000        // * estimated number of transactions per day after checkpoint
@@ -230,8 +230,13 @@ public:
         genesis.nTime = 1534570200;
         genesis.nNonce = 21423987;
 
+            printf("genesis.nTime = %u \n", genesis.nTime);
+            printf("genesis.nNonce = %u \n", genesis.nNonce);
+            printf("genesis.GetHash = %s\n", genesis.GetHash().ToString().c_str()); //first this, then comment this line out and uncomment the one under.
+            printf("genesis.hashMerkleRoot = %s \n", genesis.hashMerkleRoot.ToString().c_str()); //improvised. worked for me, to find merkle root
+
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0x00000fae7461de1bdd7d5e43dbb45c06ee9e73960666bfeb08b86ee9f3a2610b"));
+        assert(hashGenesisBlock == uint256("0x"));
 
         vFixedSeeds.clear();
         vSeeds.clear();
@@ -298,6 +303,11 @@ public:
         genesis.nTime = 1537880400;
         genesis.nBits = 0x207fffff;
         genesis.nNonce = 20542304;
+
+    //    printf("genesis.nTime = %u \n", genesis.nTime);
+    //    printf("genesis.nNonce = %u \n", genesis.nNonce);
+    //    printf("genesis.GetHash = %s\n", genesis.GetHash().ToString().c_str()); //first this, then comment this line out and uncomment the one under.
+    //    printf("genesis.hashMerkleRoot = %s \n", genesis.hashMerkleRoot.ToString().c_str()); //improvised. worked for me, to find merkle root
 
         hashGenesisBlock = genesis.GetHash();
         nDefaultPort = 29333;

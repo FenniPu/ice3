@@ -1,6 +1,6 @@
 Rekel Core integration/staging repository
 =================================================
-#[![Build Status](https://travis-ci.org/bitcoingreen/bitcoingreen.svg?branch=master)](https://travis-ci.org/bitcoingreen/bitcoingreen) #![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg)
+
 
 
 - Fast transactions featuring guaranteed zero confirmation transactions, we call it _SwiftTX_.
