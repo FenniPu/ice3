@@ -108,15 +108,15 @@ public:
         nRejectBlockOutdatedMajority = 950;
         nToCheckBlockUpgradeMajority = 1000;
         nMinerThreads = 0;
-        nTargetTimespan = 1 * 60; // Bitcoin Green: 1 day
-        nTargetSpacing = 2 * 60;  // Bitcoin Green: 2 minutes
+        nTargetTimespan = 1 * 60; // Rekel: 1 day
+        nTargetSpacing = 2 * 60;  // Rekel: 2 minutes
         nMaturity = 10;
         nMasternodeCountDrift = 20;
         nMaxMoneyOut = 21000000 * COIN;
 
         /** Height or Time Based Activations **/
         nLastPOWBlock = 200;
-        nModifierUpdateBlock = 1; // we use the version 2 for BITG
+        nModifierUpdateBlock = 1; // we use the version 2 for RKL
 
         /**
          * Build the genesis block. Note that the output of the genesis coinbase cannot
@@ -236,17 +236,17 @@ public:
         vFixedSeeds.clear();
         vSeeds.clear();
 
-        // Testnet Bitcoin Green addresses start with 'r'
+        // Testnet Rekel addresses start with 'r'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 122);
-        // Testnet Bitcoin Green script addresses start with '7' or '8'
+        // Testnet Rekel script addresses start with '7' or '8'
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 17);
         // Testnet private keys start with 'p'
         base58Prefixes[SECRET_KEY] = std::vector<unsigned char>(1, 118);
-        // Testnet Bitcoin Green BIP32 pubkeys start with 'tpub' (Bitcoin defaults)
+        // Testnet Rekel BIP32 pubkeys start with 'tpub' (Bitcoin defaults)
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x04)(0x35)(0x87)(0xCF).convert_to_container<std::vector<unsigned char> >();
-        // Testnet Bitcoin Green BIP32 prvkeys start with 'tprv' (Bitcoin defaults)
+        // Testnet Rekel BIP32 prvkeys start with 'tprv' (Bitcoin defaults)
         base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x04)(0x35)(0x83)(0x94).convert_to_container<std::vector<unsigned char> >();
-        // Testnet bitcoin green BIP44 coin type is '1' (All coin's testnet default)
+        // Testnet Rekel BIP44 coin type is '1' (All coin's testnet default)
         base58Prefixes[EXT_COIN_TYPE] = boost::assign::list_of(0x80)(0x00)(0x00)(0x01).convert_to_container<std::vector<unsigned char> >();
 
         convertSeed6(vFixedSeeds, pnSeed6_test, ARRAYLEN(pnSeed6_test));
@@ -292,8 +292,8 @@ public:
         nRejectBlockOutdatedMajority = 950;
         nToCheckBlockUpgradeMajority = 1000;
         nMinerThreads = 1;
-        nTargetTimespan = 24 * 60 * 60; // Bitcoin Green: 1 day
-        nTargetSpacing = 2 * 60;        // Bitcoin Green: 1 minutes
+        nTargetTimespan = 24 * 60 * 60; // Rekel: 1 day
+        nTargetSpacing = 2 * 60;        // Rekel: 1 minutes
         bnProofOfWorkLimit = ~uint256(0) >> 1;
         genesis.nTime = 1537880400;
         genesis.nBits = 0x207fffff;
