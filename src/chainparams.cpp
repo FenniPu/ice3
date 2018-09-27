@@ -161,7 +161,7 @@ public:
         genesis.nBits = 0x1e0ffff0;
         genesis.nNonce = 21279841;
 
-
+/*
         printf("genesis.nTime = %u \n", genesis.nTime);
         printf("genesis.nNonce = %u \n", genesis.nNonce);
         printf("genesis.GetHash = %s\n", genesis.GetHash().ToString().c_str()); //first this, then comment this line out and uncomment the one under.
@@ -170,9 +170,10 @@ public:
         printf("max nBit:  %08x\n", bnProofOfWorkLimit.GetCompact());
         printf("genesis.nBits = %u \n", genesis.nBits);
 
-    //    hashGenesisBlock = genesis.GetHash();
-    //    assert(hashGenesisBlock == uint256("0x"));
-    //    assert(genesis.hashMerkleRoot == uint256("0x"));
+        hashGenesisBlock = genesis.GetHash();
+        assert(hashGenesisBlock == uint256("0x"));
+        assert(genesis.hashMerkleRoot == uint256("0x"));
+*/
 
         hashGenesisBlock = genesis.GetHash();
         assert(hashGenesisBlock == uint256("0x0000070e2551543dcb397cbb054439e4c7294f4322a67135941bcc48fa13c34f"));
