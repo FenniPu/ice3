@@ -156,14 +156,16 @@ public:
         printf("genesis.GetHash = %s\n", genesis.GetHash().ToString().c_str()); //first this, then comment this line out and uncomment the one under.
         printf("genesis.hashMerkleRoot = %s \n", genesis.hashMerkleRoot.ToString().c_str()); //improvised. worked for me, to find merkle root
         printf("min nBit:  %08x\n", bnProofOfWorkLimit.GetCompact());
-
-        hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0x"));
-        assert(genesis.hashMerkleRoot == uint256("0x"));
+        printf("max nBit:  %08x\n", bnProofOfWorkLimit.GetCompact());
+        printf("genesis.nBits = %u \n", genesis.nBits);
 
     //    hashGenesisBlock = genesis.GetHash();
-    //    assert(hashGenesisBlock == uint256("0x0000070e2551543dcb397cbb054439e4c7294f4322a67135941bcc48fa13c34f"));
-    //    assert(genesis.hashMerkleRoot == uint256("0xafc5557636b7b5c1ff84068a26d661891196c4ff8e6822ed2f4883b53fa1762b"));
+    //    assert(hashGenesisBlock == uint256("0x"));
+    //    assert(genesis.hashMerkleRoot == uint256("0x"));
+
+        hashGenesisBlock = genesis.GetHash();
+        assert(hashGenesisBlock == uint256("0x0000070e2551543dcb397cbb054439e4c7294f4322a67135941bcc48fa13c34f"));
+        assert(genesis.hashMerkleRoot == uint256("0xafc5557636b7b5c1ff84068a26d661891196c4ff8e6822ed2f4883b53fa1762b"));
 
 
         // DNS Seeding
