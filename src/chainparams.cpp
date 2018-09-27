@@ -62,7 +62,7 @@ static Checkpoints::MapCheckpoints mapCheckpoints =
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
     1537880400, // * UNIX timestamp of last checkpoint block
-    0,     // * total number of transactions between genesis and last checkpoint
+    1,     // * total number of transactions between genesis and last checkpoint
                 //   (the tx=... number in the SetBestChain debug.log lines)
     10000        // * estimated number of transactions per day after checkpoint
 };
@@ -158,7 +158,6 @@ public:
         printf("genesis.GetHash = %s\n", genesis.GetHash().ToString().c_str()); //first this, then comment this line out and uncomment the one under.
         printf("genesis.hashMerkleRoot = %s \n", genesis.hashMerkleRoot.ToString().c_str()); //improvised. worked for me, to find merkle root
         printf("min nBit:  %08x\n", bnProofOfWorkLimit.GetCompact());
-        printf("max nBit:  %08x\n", bnProofOfWorkLimit.GetCompact());
         printf("genesis.nBits = %u \n", genesis.nBits);
 
         hashGenesisBlock = genesis.GetHash();
