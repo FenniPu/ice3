@@ -316,18 +316,18 @@ public:
         genesis.nBits = 0x207fffff;
         genesis.nNonce = 20542304;
 
-
+/*
         printf("genesis.nTime = %u \n", genesis.nTime);
         printf("genesis.nNonce = %u \n", genesis.nNonce);
         printf("genesis.GetHash = %s\n", genesis.GetHash().ToString().c_str()); //first this, then comment this line out and uncomment the one under.
         printf("genesis.hashMerkleRoot = %s \n", genesis.hashMerkleRoot.ToString().c_str()); //improvised. worked for me, to find merkle root
         printf("min nBit:  %08x\n", bnProofOfWorkLimit.GetCompact());
         printf("genesis.nBits = %u \n", genesis.nBits);
-
+*/
 
         hashGenesisBlock = genesis.GetHash();
         nDefaultPort = 29333;
-        assert(hashGenesisBlock == uint256("0x"));
+        assert(hashGenesisBlock == uint256("0xf74fda37a08d10c853cddb1db44560309ef38b6b5cc5bdfdbd8ea9ab423b7037"));
 
         vFixedSeeds.clear(); //! Regtest mode doesn't have any fixed seeds.
         vSeeds.clear();      //! Regtest mode doesn't have any DNS seeds.
