@@ -57,17 +57,16 @@ static Checkpoints::MapCheckpoints mapCheckpoints =
     (0, uint256("0x000001baa823925eccca310b8bdca572c2a2cb8ff7350121653a42c4b6600068"));
 
 
-static const Checkpoints::CCheckpointData data = {};
 
-/*
+
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
-    1538110800, // * UNIX timestamp of last checkpoint block
+    1537880400, // * UNIX timestamp of last checkpoint block
     1,     // * total number of transactions between genesis and last checkpoint
                 //   (the tx=... number in the SetBestChain debug.log lines)
     10000        // * estimated number of transactions per day after checkpoint
 };
-*/
+
 
 static Checkpoints::MapCheckpoints mapCheckpointsTestnet =
     boost::assign::map_list_of(0, uint256("0x001"));
@@ -149,11 +148,11 @@ public:
         genesis.hashPrevBlock = 0;
         genesis.hashMerkleRoot = genesis.BuildMerkleTree();
         genesis.nVersion = 1;
-        genesis.nTime = 1538110800;
+        genesis.nTime = 1537880400;
         genesis.nBits = 0x1e0ffff0;
         genesis.nNonce = 22184939;
 
-
+/*
         printf("genesis.nTime = %u \n", genesis.nTime);
         printf("genesis.nNonce = %u \n", genesis.nNonce);
         printf("genesis.GetHash = %s\n", genesis.GetHash().ToString().c_str()); //first this, then comment this line out and uncomment the one under.
@@ -164,12 +163,12 @@ public:
         hashGenesisBlock = genesis.GetHash();
         assert(hashGenesisBlock == uint256("0x"));
         assert(genesis.hashMerkleRoot == uint256("0x"));
+*/
 
-/*
         hashGenesisBlock = genesis.GetHash();
         assert(hashGenesisBlock == uint256("0x000001baa823925eccca310b8bdca572c2a2cb8ff7350121653a42c4b6600068"));
         assert(genesis.hashMerkleRoot == uint256("0xd62f0a2c7743f50ccbf8ff80c88aaad2e653d89d389bb73b5c6e5399d89ec005"));
-*/
+
 
         // DNS Seeding
         vSeeds.push_back(CDNSSeedData("46.232.248.21", "46.232.248.21"));
@@ -312,7 +311,7 @@ public:
         nTargetTimespan = 24 * 60 * 60; // Rekel: 1 day
         nTargetSpacing = 2 * 60;        // Rekel: 1 minutes
         bnProofOfWorkLimit = ~uint256(0) >> 1;
-        genesis.nTime = 1538110800;
+        genesis.nTime = 1537880400;
         genesis.nBits = 0x207fffff;
         genesis.nNonce = 20542304;
 
